@@ -1,10 +1,15 @@
-﻿using System.Text.Json.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
-using Serialization;
+using System.Text.Json.Serialization;
+using Newtonsoft.Json;
+using JSON_HW12;
 
-var electricalDev = new ElectricalDevices();
+var electrDev = new ElectricalDevices();
 
-var xmlSerializer = new XMLSeraializer();
-var data = xmlSerializer.Serialize(electricalDev);
-var deserialized = xmlSerializer.Deserialize(data);
-
+var jsonSerializer = new JSONSerialized();
+var json = jsonSerializer.Serialize(electrDev);
+var dererializedDev = jsonSerializer.Deserialize(json);
